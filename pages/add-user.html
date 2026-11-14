@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Add user - Enterprise Accessible Dashboard demo">
+<title>Add user | Enterprise Accessible Dashboard</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/accessibility.css">
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div data-include="header"></div>
+<div class="layout">
+<div data-include="sidebar"></div>
+<main id="main" tabindex="-1">
+<h1 id="ft">Add user</h1>
+<p>Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+<form id="user-form" novalidate aria-labelledby="ft">
+<fieldset>
+<legend>Personal details</legend>
+<p><label for="name">Full name *</label><input id="name" name="name" required minlength="2" autocomplete="name" aria-describedby="name-err"><span class="err" id="name-err"></span></p>
+<p><label for="email">Email address *</label><input id="email" name="email" type="email" required autocomplete="email" aria-describedby="email-err"><span class="err" id="email-err"></span></p>
+<p><label for="phone">Phone number *</label><input id="phone" name="phone" type="tel" required pattern="[+]?[0-9 ()\-]{7,16}" data-msg="Enter 7 to 16 digits; spaces, brackets and + are allowed." autocomplete="tel" aria-describedby="phone-err"><span class="err" id="phone-err"></span></p>
+</fieldset>
+<fieldset>
+<legend>Gender (optional, for demonstration)</legend>
+<p><label><input type="radio" name="gender" value="Female"> Female</label> <label><input type="radio" name="gender" value="Male"> Male</label> <label><input type="radio" name="gender" value="Prefer not to say" checked> Prefer not to say</label></p>
+</fieldset>
+<fieldset>
+<legend>Organisation</legend>
+<p><label for="dept">Department *</label><select id="dept" name="dept" required aria-describedby="dept-err"><option value="">Select department</option><option>Engineering</option><option>Finance</option><option>HR</option><option>Sales</option></select><span class="err" id="dept-err"></span></p>
+<p><label for="role">Role *</label><select id="role" name="role" required aria-describedby="role-err"><option value="">Select role</option><option>Administrator</option><option>Manager</option><option>Analyst</option><option>Viewer</option></select><span class="err" id="role-err"></span></p>
+<p><label for="status">Account status *</label><select id="status" name="status" required aria-describedby="status-err"><option value="">Select status</option><option>Active</option><option>Inactive</option><option>Pending</option></select><span class="err" id="status-err"></span></p>
+</fieldset>
+<p class="actions"><button type="submit" class="btn primary">Save user</button> <button type="reset" class="btn">Reset</button></p>
+</form>
+</main>
+</div>
+<div data-include="footer"></div>
+<script src="../js/main.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/modal.js"></script>
+<script src="../js/forms.js"></script>
+</body>
+</html>

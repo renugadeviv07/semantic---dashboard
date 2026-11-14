@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Settings - Enterprise Accessible Dashboard demo">
+<title>Settings | Enterprise Accessible Dashboard</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/accessibility.css">
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div data-include="header"></div>
+<div class="layout">
+<div data-include="sidebar"></div>
+<main id="main" tabindex="-1">
+<h1>Settings</h1>
+<p>Settings are saved in localStorage for demonstration only.</p>
+<section aria-labelledby="s1"><h2 id="s1">Profile settings</h2>
+<form id="profile-form" data-settings novalidate aria-labelledby="s1">
+<p><label for="pname">Display name *</label><input id="pname" name="pname" required minlength="2" aria-describedby="pname-err"><span class="err" id="pname-err"></span></p>
+<p><label for="pemail">Email *</label><input id="pemail" name="pemail" type="email" required aria-describedby="pemail-err"><span class="err" id="pemail-err"></span></p>
+<p><button type="submit" class="btn primary">Save profile</button></p>
+</form></section>
+<section aria-labelledby="s2"><h2 id="s2">Account preferences</h2>
+<form id="prefs-form" data-settings novalidate aria-labelledby="s2">
+<p><label for="textsize">Text size</label><select id="textsize" name="textsize"><option value="100%">Default</option><option value="112%">Large</option><option value="125%">Extra large</option></select></p>
+<p><button type="submit" class="btn primary">Save preferences</button></p>
+</form></section>
+<section aria-labelledby="s3"><h2 id="s3">Notification preferences</h2>
+<form id="notif-form" data-settings novalidate aria-labelledby="s3">
+<fieldset><legend>Send me email about</legend>
+<p><label><input type="checkbox" name="nsec"> Security alerts</label></p>
+<p><label><input type="checkbox" name="nrep"> Weekly reports</label></p>
+<p><label><input type="checkbox" name="nusr"> New user sign-ups</label></p>
+</fieldset>
+<p><button type="submit" class="btn primary">Save notifications</button></p>
+</form></section>
+<section aria-labelledby="s4"><h2 id="s4">Change password</h2>
+<form id="pw-form" novalidate aria-labelledby="s4">
+<p><label for="cur">Current password *</label><input id="cur" type="password" required autocomplete="current-password" aria-describedby="cur-err"><span class="err" id="cur-err"></span></p>
+<p><label for="np">New password *</label><input id="np" type="password" required pattern="(?=.*[0-9])(?=.*[A-Z]).{8,}" data-msg="Use at least 8 characters with one capital letter and one number." autocomplete="new-password" aria-describedby="np-hint np-err"><span id="np-hint" class="hint">At least 8 characters, one capital letter, one number.</span><span class="err" id="np-err"></span></p>
+<p><label for="cp">Confirm new password *</label><input id="cp" type="password" required autocomplete="new-password" aria-describedby="cp-err"><span class="err" id="cp-err"></span></p>
+<p><button type="submit" class="btn primary">Update password</button></p>
+</form></section>
+</main>
+</div>
+<div data-include="footer"></div>
+<script src="../js/main.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/modal.js"></script>
+<script src="../js/forms.js"></script>
+</body>
+</html>

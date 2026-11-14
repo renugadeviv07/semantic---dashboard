@@ -1,0 +1,8 @@
+.menu-btn{display:none}
+@media (max-width:900px){.layout{grid-template-columns:11rem 1fr}}
+@media (max-width:768px){
+ .menu-btn{display:inline-block}.layout{display:block}
+ .sidebar{display:none}.sidebar.open{display:block}
+ .site-header .who{display:none}main{padding:1rem}
+ .summary{grid-template-columns:1fr}input:not([type=radio]):not([type=checkbox]),select{max-width:100%}
+}

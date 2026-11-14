@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="User management - Enterprise Accessible Dashboard demo">
+<title>User management | Enterprise Accessible Dashboard</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/accessibility.css">
+</head>
+<body data-root="../">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div data-include="header"></div>
+<div class="layout">
+<div data-include="sidebar"></div>
+<main id="main" tabindex="-1">
+<h1>User management</h1>
+<p><a class="btn primary" href="add-user.html">Add user</a></p>
+<section aria-labelledby="f-h">
+<h2 id="f-h">Search and filter</h2>
+<form class="filters" role="search" aria-labelledby="f-h" onsubmit="return false">
+<p><label for="q">Search by name or email</label><input id="q" type="search"></p>
+<p><label for="fdept">Department</label><select id="fdept"><option value="">All</option><option>Engineering</option><option>Finance</option><option>HR</option><option>Sales</option></select></p>
+<p><label for="fstatus">Status</label><select id="fstatus"><option value="">All</option><option>Active</option><option>Inactive</option><option>Pending</option></select></p>
+</form>
+</section>
+<section aria-labelledby="l-h">
+<h2 id="l-h">User list</h2>
+<p id="count" role="status"></p>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="l-h">
+<table>
+<caption>Registered users (sortable by column)</caption>
+<thead><tr>
+<th scope="col" data-k="name" aria-sort="ascending"><button type="button" class="sort">Name</button></th>
+<th scope="col" data-k="email" aria-sort="none"><button type="button" class="sort">Email</button></th>
+<th scope="col" data-k="dept" aria-sort="none"><button type="button" class="sort">Department</button></th>
+<th scope="col" data-k="role" aria-sort="none"><button type="button" class="sort">Role</button></th>
+<th scope="col" data-k="status" aria-sort="none"><button type="button" class="sort">Status</button></th>
+<th scope="col">Actions</th>
+</tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+</section>
+<dialog id="confirm-dialog" aria-labelledby="cd-t" aria-describedby="confirm-msg">
+<form method="dialog">
+<h2 id="cd-t">Confirm deletion</h2>
+<p id="confirm-msg"></p>
+<p class="actions"><button type="submit" value="no" class="btn" autofocus>Cancel</button> <button type="submit" value="yes" class="btn danger">Delete</button></p>
+</form>
+</dialog>
+</main>
+</div>
+<div data-include="footer"></div>
+<script src="../js/main.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/modal.js"></script>
+<script src="../js/users.js"></script>
+</body>
+</html>

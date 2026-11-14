@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Dashboard - Enterprise Accessible Dashboard demo">
+<title>Dashboard | Enterprise Accessible Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/accessibility.css">
+</head>
+<body data-root="">
+<a class="skip-link" href="#main">Skip to main content</a>
+<div data-include="header"></div>
+<div class="layout">
+<div data-include="sidebar"></div>
+<main id="main" tabindex="-1">
+<section aria-labelledby="welcome-h">
+<h1 id="welcome-h">Welcome back, Admin</h1>
+<p>Overview of your organisation. All figures come from demonstration data in localStorage.</p>
+</section>
+<section aria-labelledby="stats-h">
+<h2 id="stats-h">Key statistics</h2>
+<ul class="cards">
+<li><article class="card"><h3>Total users</h3><p class="num" data-stat="total">0</p></article></li>
+<li><article class="card"><h3>Active users</h3><p class="num" data-stat="active">0</p></article></li>
+<li><article class="card"><h3>Pending users</h3><p class="num" data-stat="pending">0</p></article></li>
+<li><article class="card"><h3>Departments</h3><p class="num" data-stat="depts">0</p></article></li>
+</ul>
+</section>
+<section aria-labelledby="sum-h">
+<h2 id="sum-h">User activity summary</h2>
+<dl class="summary">
+<dt>Active accounts</dt><dd data-stat="active">0</dd>
+<dt>Inactive accounts</dt><dd data-stat="inactive">0</dd>
+<dt>Awaiting approval</dt><dd data-stat="pending">0</dd>
+</dl>
+</section>
+<section aria-labelledby="rec-h">
+<h2 id="rec-h">Recent activity</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-labelledby="rec-h">
+<table>
+<caption>Latest system events</caption>
+<thead><tr><th scope="col">Date</th><th scope="col">User</th><th scope="col">Action</th></tr></thead>
+<tbody>
+<tr><td><time datetime="2026-11-12">12 Nov 2026</time></td><th scope="row">Asha Raman</th><td>Logged in</td></tr>
+<tr><td><time datetime="2026-11-11">11 Nov 2026</time></td><th scope="row">Daniel Cho</th><td>Updated profile</td></tr>
+<tr><td><time datetime="2026-11-10">10 Nov 2026</time></td><th scope="row">Priya Nair</th><td>Exported report</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+<div data-include="footer"></div>
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/modal.js"></script>
+
+</body>
+</html>
